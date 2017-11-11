@@ -1,6 +1,11 @@
 {
  "short_name": "DigitPaper",
  "name": "Digit Paper",
+ "start_url": "index.html",
+ "theme_color":"#ffffff",
+ "background_color":"#ffffff",
+ "display":"standalone",
+ "orientation":"portrait",
  "icons": [
   {
    "src": "\/img\/android-icon-36x36.png",
