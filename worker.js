@@ -1,12 +1,9 @@
-var PRECACHE = 'precache-biome';
+var PRECACHE = 'precache-digitpaper';
 var RUNTIME = 'runtime';
 
 // list the files you want cached by the service worker
 PRECACHE_URLS = [
-'qrReader/src/alignpat.js',   'qrReader/src/databr.js',    'qrReader/src/errorlevel.js',  'qrReader/src/gf256poly.js', 
-'qrReader/src/bitmat.js',     'qrReader/src/datamask.js',  'qrReader/src/findpat.js',     'qrReader/src/grid.js',       'qrReader/src/version.js',
-'qrReader/src/bmparser.js ',  'qrReader/src/decoder.js',   'qrReader/src/formatinf.js',   'qrReader/src/qrcode.js',
-'qrReader/src/datablock.js',  'qrReader/src/detector.js',  'qrReader/src/gf256.js',       'qrReader/src/rsdecoder.js'
+
 ];
 
 
