@@ -1,4 +1,5 @@
 {
+  "version": "1.1",
  "short_name": "DigitPaper",
  "name": "Digit Paper",
  "start_url": "index.html",
