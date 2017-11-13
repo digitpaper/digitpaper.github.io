@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,13 +11,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Digit Paper</title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" crossorigin="anonymous">
-    <script src="bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
 
 
     <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
@@ -39,35 +36,35 @@
     <meta name="theme-color" content="#ffffff">
 
     <script>
-  
-    if('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('worker.js').then(function(registration) {
+
+        if('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('worker.js').then(function(registration) {
           // Registration was successful
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
+          //console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
           // registration failed :(
           console.log('ServiceWorker registration failed: ', err);
-        });
       });
-    }
-  
-    </script>
+        });
+      }
 
-    <style>
-    	body {
-  padding-top: 50px;
-}
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-    </style>
+  </script>
 
-  </head>
-  <body>
+  <style>
+  body {
+      padding-top: 50px;
+  }
+  .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+  }
+</style>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -75,28 +72,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+        </button>
+        <a class="navbar-brand" href="#">DigitPaper</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div><!--/.nav-collapse -->
+</div>
+</nav>
 
-    <div class="container">
+<div class="container">
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+  <div class="starter-template">
+    <h1>Hellow World!</h1>
+    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+</div>
 
-    </div><!-- /.container -->
-    <!-- Page Functions -->
-    <script src="index.js"></script>
-  </body>
+</div><!-- /.container -->
+
+<!-- Page Functions -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<script src="index.js"></script>
+</body>
 </html>
