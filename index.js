@@ -49,27 +49,27 @@
     }
 
     if (l > $( window ).width()) {
-      l = $( window ).width();
+      l = 0;
     } 
 
     if (l < 0) {
-      l = 0;
+      l = $( window ).width();;
     }
 
-    if (beta > 0) {
+    if (beta > 45) {
       t ++;
-    } else if (beta < 0) {
+    } else if (beta < 45) {
       t --;
     } else {
       t = t;
     }
 
     if (t > $( window ).height()) {
-      t = $( window ).height();
+      t = 0;
     } 
 
     if (t < 0) {
-      t = 0;
+      t = $( window ).height();
     }
 
     $("#airPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
