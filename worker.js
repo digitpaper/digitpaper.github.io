@@ -3,7 +3,9 @@ var RUNTIME = 'runtime';
 
 // list the files you want cached by the service worker
 PRECACHE_URLS = [
-'index.html'
+'index.html', 'index.js',
+'bootstrap/js/bootstrap.min.js',
+'https://code.jquery.com/jquery-3.2.1.slim.min.js'
 ];
 
 
