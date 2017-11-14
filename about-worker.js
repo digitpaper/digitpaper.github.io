@@ -1,4 +1,4 @@
-var PRECACHE = 'precache-digitpaper';
+var PRECACHE = 'precache-digitpaper-about';
 var RUNTIME = 'runtime';
 
 // list the files you want cached by the service worker
