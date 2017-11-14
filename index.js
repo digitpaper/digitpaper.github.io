@@ -2,6 +2,8 @@
 (function(){
 
     $(window).ready(function(){
-        $('#athBtn').popover();
+    	$('#athBtn').click(function(){
+        $('#athBtn').popover('toggle');
+        });
     });
 })();
