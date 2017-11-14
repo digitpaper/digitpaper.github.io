@@ -3,7 +3,6 @@ var RUNTIME = 'runtime';
 
 // list the files you want cached by the service worker
 PRECACHE_URLS = [
-'index.html', 'index.js',
 'bootstrap/js/bootstrap.min.js',
 'bootstrap/css/bootstrap.min.css',
 'bootstrap/css/bootstrap-theme.min.css',
