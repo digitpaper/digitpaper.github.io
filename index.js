@@ -72,7 +72,7 @@
       t = 0;
     }
 
-    $("#airPlane").css('position: absolute; top: '+ t +'px; left: '+ l +'px;');
+    $("#airPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
   }
 
 })();
