@@ -39,11 +39,13 @@
     var p = $("#airPlane").position();
     var t = p.top;
     var l = p.left;
+    var speedX = 1;
+    var speedY = 1;
 
     if (gamma > 0) {
-      l ++;
+      l += speedX * gamma/360;
     } else if (gamma < 0) {
-      l --;
+      l -= speedX * gamma/360;;
     } else {
       l = l;
     }
@@ -57,9 +59,9 @@
     }
 
     if (beta > 45) {
-      t ++;
+      t += speedY * beta/360;
     } else if (beta < 45) {
-      t --;
+      t -= speedY * beta/360;
     } else {
       t = t;
     }
