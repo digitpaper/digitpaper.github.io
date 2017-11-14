@@ -16,9 +16,9 @@
         arAlpha = Math.round(rotation.alpha);
         arBeta = Math.round(rotation.beta);
         arGamma = Math.round(rotation.gamma);
-        $("#arAlpha").html(alpha);
-        $("#arBeta").html(beta);
-        $("#arGamma").html(gamma);
+        $("#arAlpha").html(arAlpha);
+        $("#arBeta").html(arBeta);
+        $("#arGamma").html(arGamma);
       }          
     }
 
