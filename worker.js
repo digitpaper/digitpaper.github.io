@@ -5,6 +5,8 @@ var RUNTIME = 'runtime';
 PRECACHE_URLS = [
 'index.html', 'index.js',
 'bootstrap/js/bootstrap.min.js',
+'bootstrap/css/bootstrap.min.css',
+'bootstrap/css/bootstrap-theme.min.css',
 'https://code.jquery.com/jquery-3.2.1.slim.min.js'
 ];
 
