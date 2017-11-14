@@ -15,8 +15,8 @@
 
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"><!--crossorigin="anonymous"-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 
 
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
@@ -64,6 +64,13 @@
       padding: 40px 15px;
       text-align: center;
   }
+  #footer {
+       position:absolute;
+       bottom:0;
+       width: 100%;
+       height:1px;   /* Height of the footer */
+       background:#ffffff;
+    }
 </style>
 
 </head>
@@ -95,15 +102,20 @@
   <div class="starter-template">
     <h1>Hello World!</h1>
     <p>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Add to Home Screen</button>
+        <button type="button" id="athBtn" class="btn btn-primary btn-lg btn-block">Add to Home Screen</button>
     </p>
+</div><!-- /.container -->
+
+<div class="row" id="foot"> 
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="text-center"><a href="#" id="popOver" title="Add to Home Screen" data-toggle="popover" data-placement="top" data-content="Content">d</a></p>
+    </div>
 </div>
 
-</div><!-- /.container -->
 
 <!-- Page Functions -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 
 <script src="index.js"></script>
 </body>
