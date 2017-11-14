@@ -58,9 +58,9 @@
       l = $( window ).width();;
     }
 
-    if (beta > 45) {
+    if (beta > 0) {
       t += speedY * beta/360;
-    } else if (beta < 45) {
+    } else if (beta < 0) {
       t -= speedY * beta/360;
     } else {
       t = t;
