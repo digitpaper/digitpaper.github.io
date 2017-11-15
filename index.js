@@ -5,7 +5,7 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
-  var reach = 200;
+  var reach = 250;
 
   var windowW = 0;
   var windowH = 0;
@@ -14,15 +14,14 @@
   var clouds = [];
 
   var totalHit = 0;
+  var missileOnAir = false;
 
   $(window).ready(function(){
     
     windowW = $(window).width();
     windowH = $(window).height();
   
-    $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
-
-    
+    $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});    
 
     window.ondeviceorientation = function(event) {
       alpha = Math.round(event.alpha);
@@ -50,7 +49,9 @@
     }, 500);
 
     $('body').bind("touchstart", function(){
-      lauchMissle();
+      if (!missileOnAir) {
+        lauchMissle();
+      }        
     });
   });
 
@@ -119,6 +120,7 @@
   }
 
   function lauchMissle(){
+    missileOnAir = true;
     var pPlane = $("#airPlane").position();
     var tP = pPlane.top;
     var lP = pPlane.left;
@@ -127,9 +129,10 @@
     $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
 
     var shooting = setInterval(function(){      
-      if (reach <=0 ) {
+      if (reach <= 0) {
         tP = 0;
         clearInterval(shooting);
+        missileOnAir = false;
       }
       tP = tP - 10;
       reach = reach - 10;
@@ -151,6 +154,7 @@
         var cloudID = $(this).attr('id');      
         $(this).remove();
         clouds = removeFromArray(clouds, cloudID);
+        missileOnAir = false;
         totalHit++;
         $("#score").html(totalHit);
       }
