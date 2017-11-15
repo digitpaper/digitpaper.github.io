@@ -5,7 +5,7 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
-  var reach = 250;
+  var reach = 200;
 
   var windowW = 0;
   var windowH = 0;
@@ -124,7 +124,7 @@
     var pPlane = $("#airPlane").position();
     var tP = pPlane.top;
     var lP = pPlane.left;
-    reach = 100;
+    reach = 200;
 
     $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
 
@@ -150,7 +150,7 @@
       var pCloud = $(this).position();
       var tC = pCloud.top;
       var lC = pCloud.left;
-      if (tC <= tM+5 && tC >= tM-5 && lC <= lM+5 && lC >= lM-5) {
+      if (tC <= tM+5 && tC >= tM-5 && lC <= lM+ 10 && lC >= lM-10) {
         var cloudID = $(this).attr('id');      
         $(this).remove();
         clouds = removeFromArray(clouds, cloudID);
