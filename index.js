@@ -65,7 +65,7 @@
       } else {
         turnL = false;
       }
-    }, 500);
+    }, 1000);
 
     $('body').click(function(){
       lauchMissle();
