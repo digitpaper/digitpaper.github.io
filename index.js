@@ -102,7 +102,7 @@
     }
 
     // Y
-    if (beta > 60) {
+    if (beta > 70) {
       t += 1;
     } else if (beta < 0) {
       t -= 1;
