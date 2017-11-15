@@ -38,7 +38,7 @@
     setInterval(function(){
       generateCloud(cloudIndex);
       cloudIndex ++;
-    }, 1000);
+    }, 500);
 
     $('body').bind("click touchstart", function(){
       lauchMissle();
