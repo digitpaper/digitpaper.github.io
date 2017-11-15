@@ -139,7 +139,6 @@
   }
 
   function lauchMissle(){
-    missileOnAir = true;
     var pPlane = $("#airPlane").position();
     var tP = pPlane.top;
     var lP = pPlane.left;
@@ -147,7 +146,8 @@
 
     $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
 
-    var shooting = setInterval(function(){      
+    var shooting = setInterval(function(){
+      missileOnAir = true;
       if (reach <= 0) {
         tP = 0;
         clearInterval(shooting);
@@ -178,7 +178,6 @@
         $("#score").html(totalHit);
       }
     });
-
   }
 
   function removeFromArray(arr, niddle){
