@@ -7,6 +7,7 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
+  var reach = 200;
 
   $(window).ready(function(){
     $('#athBtn').click(function(){
@@ -36,11 +37,19 @@
 
     setInterval(function(){
       fly(beta, gamma); 
-    }
-      , 30);
+    }, 10);
+
+    $('body').click(function(){
+      lauchMissle();
+    });
+
   });
 
   function fly(beta, gamma){
+
+    /* 
+     * v=v+at ?
+     */
     
     var p = $("#airPlane").position();
     var t = p.top;
@@ -61,6 +70,7 @@
       l = $( window ).width();;
     }
 
+    // Y
     if (beta > 0) {
       t += 1;
     } else if (beta < 0) {
@@ -76,6 +86,24 @@
     }
 
     $("#airPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
+  }
+
+  function lauchMissle(){
+    var pPlane = $("#airPlane").position();
+    var tP = pPlane.top;
+    var lP = pPlane.left;
+
+    $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
+
+    var shooting = setInterval(function(){      
+      if (reach <=0 ) {
+        tP = 0;
+        clearInterval(this);       
+      }
+      tP = tP - 10;
+      reach = reach - 10;
+      $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
+    }, 10);
   }
 
 })();
