@@ -1,5 +1,3 @@
-
-
 (function(){
 
   var alpha = 0;
@@ -9,7 +7,16 @@
   var speedY = 0;
   var reach = 200;
 
+  var windowW = 0;
+  var windowH = 0;
+  
+
   $(window).ready(function(){
+    
+    windowW = $(window).width;
+    windowH = $(window).height;
+    $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
+
     $('#athBtn').click(function(){
       $('#athBtn').popover('toggle');
     });
@@ -62,27 +69,27 @@
       l -= 1;
     }
 
-    if (l > $( window ).width()) {
+    if (l > windowW) {
       l = 0;
     } 
 
     if (l < 0) {
-      l = $( window ).width();;
+      l = windowW;
     }
 
     // Y
     if (beta > 70) {
       t += 1;
-    } else if (beta < 25) {
+    } else if (beta < 0) {
       t -= 1;
     }
 
-    if (t > $( window ).height()) {
+    if (t > windowH) {
       t = 0;
     } 
 
     if (t < 0) {
-      t = $( window ).height();
+      t = windowH;
     }
 
     $("#airPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
