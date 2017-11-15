@@ -63,9 +63,17 @@
                 left: 0px;
             }
             #missile {
-            	position: absolute;
+                position: absolute;
                 top:  0px;
                 left: 0px;
+            }
+            .gly-rotate-180 {
+              filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+              -webkit-transform: rotate(180deg);
+              -moz-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+              -o-transform: rotate(180deg);
+              transform: rotate(180deg);
             }
         </style>
     </head>
@@ -90,32 +98,27 @@
             </div>
         </nav>
         <div class="container">
+
+            <span id="enemyPlane" class="glyphicon glyphicon-plane gly-rotate-180"></span>
             <span id="airPlane" class="glyphicon glyphicon-plane"></span>
             <span id="missile" class="glyphicon glyphicon-option-vertical"></span>
+           
+
             <div class="starter-template">
                 <h1 style="color: #44444400;text-shadow: 6px 3px 12px #777777;">Hello World!</h1>
             
-            	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	            	<p>
-	            		<span class="block">I </span>
-	            		<span class="block">am </span>
-	            		<span class="block">Charlie</span><span class="block">. </span>
-	            		<span class="block">Nice </span>
-	            		<span class="block">to </span>
-	            		<span class="block">meet </span>
-	            		<span class="block">you</span><span class="block">!</span><span class="block">! </span>
-	            		<span class="block">What </span>
-	            		<span class="block">is </span>
-	            		<span class="block">your </span>
-	            		<span class="block">name</span><span class="block">?</span>
-	            	</p>
-	            </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p style="color: #44444488;">
+                        Tilt screen to control your Fight Jet.<br>
+                        Touch the screen to shoot.
+                    </p>
+                </div>
             </div>
         </div>
         <!-- /.container -->
         <div class="footer navbar-fixed-bottom">
             <p class="text-left" style="color: #44444488;">
-               	X : <span id="alpha"></span><br>
+                X : <span id="alpha"></span><br>
                 Y : <span id="beta"></span><br>
                 Z : <span id="gamma"></span><br>
             </p>
