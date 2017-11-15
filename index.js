@@ -71,9 +71,9 @@
     }
 
     // Y
-    if (beta > 30) {
+    if (beta > 50) {
       t += 1;
-    } else if (beta < 30) {
+    } else if (beta < 50) {
       t -= 1;
     }
 
