@@ -7,31 +7,19 @@
   var speedY = 0;
   var reach = 150;
 
-  var turnT = false;
-  var turnL = false;
-
   var windowW = 0;
   var windowH = 0;
-  
+
+  var cloudIndex = 0;
 
   $(window).ready(function(){
     
     windowW = $(window).width();
     windowH = $(window).height();
+  
     $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
-    $("#enemyPlane").css({'position': 'absolute', 'top': '60px', 'left': (windowW/2) +'px'});
 
-
-    window.ondevicemotion = function(event) {
-      ax = event.accelerationIncludingGravity.x
-      ay = event.accelerationIncludingGravity.y
-      az = event.accelerationIncludingGravity.z
-      //rotation = event.rotationRate;
-      
-      $("#arAlpha").html(Math.round(ax));
-      $("#arBeta").html(Math.round(ay));
-      $("#arGamma").html(Math.round(az));
-    }
+    
 
     window.ondeviceorientation = function(event) {
       alpha = Math.round(event.alpha);
@@ -48,78 +36,40 @@
     }, 10);
 
     setInterval(function(){
-      enemyFly(turnT, turnL); 
-    }, 20);
-
-    setInterval(function(){
-      var diceT = Math.floor(Math.random() * 10);
-      var diceL = Math.floor(Math.random() * 10);
-      if (diceT > 4) {
-        turnT = true;
-      } else {
-        turnT = false;
-      }
-
-      if (diceL > 4) {
-        turnL = true;
-      } else {
-        turnL = false;
-      }
+      generateCloud(cloudIndex);
+      cloudIndex ++;
     }, 1000);
 
     $('body').bind("click touchstart", function(){
       lauchMissle();
     });
-    /*
-    $('body').click(function(){
-      lauchMissle();
-    });
-    */
-
   });
 
-  function enemyFly(turnT, turnL){
+  function generateCloud(index){
 
-    var p = $("#enemyPlane").position();
-    var t = p.top;
-    var l = p.left;    
+    var cloudID = 'cloud-' + index;
+    var cloudHTML = '<span class="glyphicon glyphicon-cloud" id="'+ cloudID +'" style="position:absolute;"></span>';
+    $('body').prepend(cloudHTML);
+    
+    var cloudT = 50;
+    var cloudL = Math.random() * windowW;
+    
+    setInterval(function(){
+      cloudT = cloudT + 1;
+      
+      if (cloudL > windowW - 10) {
+        cloudL = windowW - 10;
+      }
 
-    if (turnT) {
-      t--;
-    } else {
-      t++;
-    }
-
-    if (t > windowH) {
-      t = 50;
-    } 
-
-    if (t < 50) {
-      t = windowH;
-    }
-
-    if (turnL) {
-      l--;
-    } else {
-      l++;
-    }
-
-    if (l > windowW) {
-      l = 0;
-    } 
-
-    if (l < 0) {
-      l = windowW;
-    }
-
-    $("#enemyPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
+      if (cloudT > windowH - 20) {
+        $('#' + cloudID).remove();
+      } else {
+        $("#"+cloudID).css({'position': 'absolute', 'top': cloudT +'px', 'left': cloudL +'px'});
+      }
+    }, 10);
   }
 
   function fly(beta, gamma){
-
-    /* 
-     * v=v+at ?
-     */
     
     var p = $("#airPlane").position();
     var t = p.top;
@@ -178,3 +128,83 @@
   }
 
 })();
+
+/*
+
+var turnT = false;
+var turnL = false;
+$("#enemyPlane").css({'position': 'absolute', 'top': '60px', 'left': (windowW/2) +'px'});
+window.ondevicemotion = function(event) {
+    ax = event.accelerationIncludingGravity.x
+    ay = event.accelerationIncludingGravity.y
+    az = event.accelerationIncludingGravity.z
+    //rotation = event.rotationRate;
+    
+    $("#arAlpha").html(Math.round(ax));
+    $("#arBeta").html(Math.round(ay));
+    $("#arGamma").html(Math.round(az));
+  }
+*/
+
+/*
+    setInterval(function(){
+      enemyFly(turnT, turnL); 
+    }, 20);
+*/
+
+/*
+    setInterval(function(){
+      var diceT = Math.floor(Math.random() * 10);
+      var diceL = Math.floor(Math.random() * 10);
+      if (diceT > 4) {
+        turnT = true;
+      } else {
+        turnT = false;
+      }
+
+      if (diceL > 4) {
+        turnL = true;
+      } else {
+        turnL = false;
+      }
+    }, 1000);
+*/
+
+/*
+function enemyFly(turnT, turnL){
+
+    var p = $("#enemyPlane").position();
+    var t = p.top;
+    var l = p.left;    
+
+    if (turnT) {
+      t--;
+    } else {
+      t++;
+    }
+
+    if (t > windowH) {
+      t = 50;
+    } 
+
+    if (t < 50) {
+      t = windowH;
+    }
+
+    if (turnL) {
+      l--;
+    } else {
+      l++;
+    }
+
+    if (l > windowW) {
+      l = 0;
+    } 
+
+    if (l < 0) {
+      l = windowW;
+    }
+
+    $("#enemyPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
+  }
+*/
