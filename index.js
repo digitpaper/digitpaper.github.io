@@ -39,7 +39,6 @@
 
     var cloudTimer = setInterval(function(){
       var cloudID = 'c-'+cloudIndex;
-
       generateCloud(cloudID);
       clouds.push(cloudID);
       cloudIndex ++;
@@ -52,6 +51,26 @@
       if (!missileOnAir) {
         lauchMissle();
       }        
+    });
+
+    $(document).keydown(function(e){
+      if (e.keyCode == 37) { 
+        gamma = -20;
+      }
+      if (e.keyCode == 38) {
+        beta = -10;
+      }
+      if (e.keyCode == 39) { 
+        gamma = 50;
+      }
+      if (e.keyCode == 40) { 
+        beta = 90;
+      }
+      if (e.keyCode == 32) { 
+        if (!missileOnAir) {
+          lauchMissle();
+        } 
+      }
     });
   });
 
