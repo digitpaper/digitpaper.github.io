@@ -5,7 +5,7 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
-  var reach = 100;
+  var reach = 150;
 
   var turnT = false;
   var turnL = false;
@@ -67,9 +67,14 @@
       }
     }, 1000);
 
+    $('body').bind("click touchstart", function(){
+      lauchMissle();
+    });
+    /*
     $('body').click(function(){
       lauchMissle();
     });
+    */
 
   });
 
