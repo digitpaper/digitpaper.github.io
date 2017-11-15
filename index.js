@@ -56,9 +56,9 @@
     var l = p.left;
 
     // X
-    if (gamma > 5) {
+    if (gamma > 15) {
       l += 1;
-    } else if (gamma < 5) {
+    } else if (gamma < -15) {
       l -= 1;
     }
 
