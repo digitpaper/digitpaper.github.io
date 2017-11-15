@@ -17,10 +17,6 @@
     windowH = $(window).height;
     $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
 
-    $('#athBtn').click(function(){
-      $('#athBtn').popover('toggle');
-    });
-
     window.ondevicemotion = function(event) {
       ax = event.accelerationIncludingGravity.x
       ay = event.accelerationIncludingGravity.y
