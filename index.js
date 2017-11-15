@@ -19,9 +19,9 @@
       az = event.accelerationIncludingGravity.z
       //rotation = event.rotationRate;
       
-      $("#arAlpha").html(ax);
-      $("#arBeta").html(ay);
-      $("#arGamma").html(az);      
+      $("#arAlpha").html(Math.round(ax));
+      $("#arBeta").html(Math.round(ay));
+      $("#arGamma").html(Math.round(az));
     }
 
     window.ondeviceorientation = function(event) {
