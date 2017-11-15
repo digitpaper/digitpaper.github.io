@@ -5,7 +5,7 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
-  var reach = 200;
+  var reach = 100;
 
   var turnT = false;
   var turnL = false;
@@ -61,9 +61,9 @@
       }
 
       if (diceL > 4) {
-        diceL = true;
+        turnL = true;
       } else {
-        diceL = false;
+        turnL = false;
       }
     }, 500);
 
@@ -86,10 +86,10 @@
     }
 
     if (t > windowH) {
-      t = 0;
+      t = 50;
     } 
 
-    if (t < 0) {
+    if (t < 50) {
       t = windowH;
     }
 
@@ -143,7 +143,7 @@
     }
 
     if (t > windowH) {
-      t = 0;
+      t = 50;
     } 
 
     if (t < 0) {
@@ -157,7 +157,7 @@
     var pPlane = $("#airPlane").position();
     var tP = pPlane.top;
     var lP = pPlane.left;
-    reach = 200;
+    reach = 100;
 
     $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
 
