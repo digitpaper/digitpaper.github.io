@@ -56,9 +56,9 @@
     var l = p.left;
 
     // X
-    if (gamma > 0) {
+    if (gamma > 5) {
       l += 1;
-    } else if (gamma < 0) {
+    } else if (gamma < 5) {
       l -= 1;
     }
 
@@ -73,7 +73,7 @@
     // Y
     if (beta > 50) {
       t += 1;
-    } else if (beta < 50) {
+    } else if (beta < 45) {
       t -= 1;
     }
 
