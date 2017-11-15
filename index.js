@@ -5,12 +5,15 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
-  var reach = 150;
+  var reach = 200;
 
   var windowW = 0;
   var windowH = 0;
 
   var cloudIndex = 0;
+  var clouds = [];
+
+  var totalHit = 0;
 
   $(window).ready(function(){
     
@@ -37,6 +40,7 @@
 
     setInterval(function(){
       generateCloud(cloudIndex);
+      clouds.push(cloudIndex);
       cloudIndex ++;
     }, 500);
 
@@ -48,7 +52,7 @@
   function generateCloud(index){
 
     var cloudID = 'cloud-' + index;
-    var cloudHTML = '<span class="glyphicon glyphicon-cloud" id="'+ cloudID +'" style="position:absolute;"></span>';
+    var cloudHTML = '<span class="glyphicon glyphicon-cloud cloud" id="'+ cloudID +'" style="position:absolute;"></span>';
     $('body').prepend(cloudHTML);
     
     var cloudT = 50;
@@ -63,6 +67,7 @@
 
       if (cloudT > windowH - 20) {
         $('#' + cloudID).remove();
+        clouds = removeFromArray(clouds, index);
       } else {
         $("#"+cloudID).css({'position': 'absolute', 'top': cloudT +'px', 'left': cloudL +'px'});
       }
@@ -119,12 +124,41 @@
     var shooting = setInterval(function(){      
       if (reach <=0 ) {
         tP = 0;
-        clearInterval(shooting);       
+        clearInterval(shooting);
       }
       tP = tP - 10;
       reach = reach - 10;
+      isHit();
       $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
     }, 10);
+  }
+
+  function isHit(){
+    var pMissile = $("#missile").position();
+    var tM = pMissile.top;
+    var lM = pMissile.left;
+
+    $(".cloud").each(function(){
+      var pCloud = $(this).position();
+      var tC = pCloud.top;
+      var lC = pCloud.left;
+      if (tC <= tM+5 && tC >= tM-5 && lC <= lM+5 && lC >= lM-5) {
+        var couldID = $(this).attr('id');
+        var index = couldID.split('-')[1];
+        $(this).remove();
+        clouds = removeFromArray(clouds, index);
+        totalHit++;
+        $("#score").html(totalHit);
+      }
+    });
+
+  }
+
+  function removeFromArray(arr, niddle){
+    arr = arr.filter(function(item) { 
+        return item !== niddle
+    });
+    return arr;
   }
 
 })();
