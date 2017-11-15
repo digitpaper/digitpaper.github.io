@@ -62,7 +62,7 @@
     var cloudT = 50;
     var cloudL = Math.random() * windowW;
     
-    setInterval(function(){
+    var flowTimer = setInterval(function(){
       cloudT = cloudT + 1;
       
       if (cloudL > windowW - 10) {
@@ -72,6 +72,7 @@
       if (cloudT > windowH - 20) {
         $('#' + cloudID).remove();
         clouds = removeFromArray(clouds, cloudID);
+        clearInterval(flowTimer);
       } else {
         $("#"+cloudID).css({'position': 'absolute', 'top': cloudT +'px', 'left': cloudL +'px'});
       }
