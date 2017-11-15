@@ -13,6 +13,9 @@
   var windowW = 0;
   var windowH = 0;
 
+  var planeTimer;
+  var cloudTimer;
+
   var cloudIndex = 0;
   var clouds = [];
 
@@ -20,40 +23,33 @@
   var missileOnAir = false;
 
   $(window).ready(function(){
+    $("#stopBtn").hide();
     
     windowW = $(window).width();
     windowH = $(window).height();
   
-    $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});    
+    $("#startBtn").click(function(){
+      startGame();
+      $(this).hide();
+      $("#stopBtn").show();
+    });
+
+    $("#stopBtn").click(function(){
+      stopGame();
+      $(this).hide();
+      $("#startBtn").show();
+    });
 
     window.ondeviceorientation = function(event) {
       alpha = Math.round(event.alpha);
       beta = Math.round(event.beta);
       gamma = Math.round(event.gamma);
-      
-      $("#alpha").html(alpha);
-      $("#beta").html(beta);
-      $("#gamma").html(gamma);      
     }
-
-    var planeTimer = setInterval(function(){
-      fly(beta, gamma); 
-    }, 10);
-
-    var cloudTimer = setInterval(function(){
-      var cloudID = 'c-'+cloudIndex;
-      generateCloud(cloudID);
-      clouds.push(cloudID);
-      cloudIndex ++;
-      if (cloudIndex >= 300) {
-        clearInterval(cloudTimer);
-      }
-    }, 500);
 
     $('body').bind("touchstart", function(){
       if (!missileOnAir) {
         lauchMissle();
-      }        
+      }
     });
 
     $(document).keydown(function(e){
@@ -76,6 +72,34 @@
       }
     });
   });
+
+
+  function startGame(){
+    /*--------- Start Game -----------*/
+    $("#airPlane").show();
+    $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
+
+    planeTimer = setInterval(function(){
+      fly(beta, gamma); 
+    }, 10);
+
+    cloudTimer = setInterval(function(){
+      var cloudID = 'c-'+cloudIndex;
+      generateCloud(cloudID);
+      clouds.push(cloudID);
+      cloudIndex ++;
+      if (cloudIndex >= 300) {
+        clearInterval(cloudTimer);
+      }
+    }, 500);
+    /*---------/ Start Game -----------*/
+  }
+
+  function stopGame(){
+    clearInterval(planeTimer);
+    clearInterval(cloudTimer);
+    $("#airPlane").hide();
+  }
 
   function generateCloud(cloudID){
 
@@ -191,6 +215,12 @@
   }
 
 })();
+
+/*
+       $("#alpha").html(alpha);
+      $("#beta").html(beta);
+      $("#gamma").html(gamma);
+*/
 
 /*
 
