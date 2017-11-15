@@ -71,9 +71,9 @@
     }
 
     // Y
-    if (beta > 0) {
+    if (beta > 30) {
       t += 1;
-    } else if (beta < 0) {
+    } else if (beta < 30) {
       t -= 1;
     }
 
@@ -92,13 +92,14 @@
     var pPlane = $("#airPlane").position();
     var tP = pPlane.top;
     var lP = pPlane.left;
+    reach = 200;
 
     $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
 
     var shooting = setInterval(function(){      
       if (reach <=0 ) {
         tP = 0;
-        clearInterval(this);       
+        clearInterval(shooting);       
       }
       tP = tP - 10;
       reach = reach - 10;
