@@ -2,6 +2,12 @@
 
 (function(){
 
+  var alpha = 0;
+  var beta = 0;
+  var gamma = 0;
+  var speedX = 0;
+  var speedY = 0;
+
   $(window).ready(function(){
     $('#athBtn').click(function(){
       $('#athBtn').popover('toggle');
@@ -11,43 +17,40 @@
       ax = event.accelerationIncludingGravity.x
       ay = event.accelerationIncludingGravity.y
       az = event.accelerationIncludingGravity.z
-      rotation = event.rotationRate;
-      if (rotation != null) {
-        arAlpha = Math.round(rotation.alpha);
-        arBeta = Math.round(rotation.beta);
-        arGamma = Math.round(rotation.gamma);
-        $("#arAlpha").html(arAlpha);
-        $("#arBeta").html(arBeta);
-        $("#arGamma").html(arGamma);
-      }          
+      //rotation = event.rotationRate;
+      
+      $("#arAlpha").html(ax);
+      $("#arBeta").html(ay);
+      $("#arGamma").html(az);      
     }
 
     window.ondeviceorientation = function(event) {
       alpha = Math.round(event.alpha);
       beta = Math.round(event.beta);
       gamma = Math.round(event.gamma);
+      
       $("#alpha").html(alpha);
       $("#beta").html(beta);
-      $("#gamma").html(gamma);
-
-      fly(beta, gamma);
-
+      $("#gamma").html(gamma);      
     }
+
+    setInterval(function(){
+      fly(beta, gamma); 
+    }
+      , 30);
   });
 
   function fly(beta, gamma){
+    
     var p = $("#airPlane").position();
     var t = p.top;
     var l = p.left;
-    var speedX = 1;
-    var speedY = 1;
 
+    // X
     if (gamma > 0) {
-      l += speedX * gamma/360;
+      l += 1;
     } else if (gamma < 0) {
-      l -= speedX * gamma/360;;
-    } else {
-      l = l;
+      l -= 1;
     }
 
     if (l > $( window ).width()) {
@@ -59,11 +62,9 @@
     }
 
     if (beta > 0) {
-      t += speedY * beta/360;
+      t += 1;
     } else if (beta < 0) {
-      t -= speedY * beta/360;
-    } else {
-      t = t;
+      t -= 1;
     }
 
     if (t > $( window ).height()) {
