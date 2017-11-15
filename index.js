@@ -34,16 +34,18 @@
       $("#gamma").html(gamma);      
     }
 
-    setInterval(function(){
+    var planeTimer = setInterval(function(){
       fly(beta, gamma); 
     }, 10);
 
-    setInterval(function(){
-      generateCloud(cloudIndex);
-      clouds.push(cloudIndex);
+    var cloudTimer = setInterval(function(){
+      var cloudID = 'c-'+cloudIndex;
+
+      generateCloud(cloudID);
+      clouds.push(cloudID);
       cloudIndex ++;
-      if (cloudIndex >= 50) {
-        cloudIndex = 0;
+      if (cloudIndex >= 300) {
+        clearInterval(cloudTimer);
       }
     }, 500);
 
@@ -52,9 +54,8 @@
     });
   });
 
-  function generateCloud(index){
+  function generateCloud(cloudID){
 
-    var cloudID = 'cloud-' + index;
     var cloudHTML = '<span class="glyphicon glyphicon-cloud cloud" id="'+ cloudID +'" style="position:absolute;"></span>';
     $('body').prepend(cloudHTML);
     
@@ -70,7 +71,7 @@
 
       if (cloudT > windowH - 20) {
         $('#' + cloudID).remove();
-        clouds = removeFromArray(clouds, index);
+        clouds = removeFromArray(clouds, cloudID);
       } else {
         $("#"+cloudID).css({'position': 'absolute', 'top': cloudT +'px', 'left': cloudL +'px'});
       }
@@ -146,10 +147,9 @@
       var tC = pCloud.top;
       var lC = pCloud.left;
       if (tC <= tM+5 && tC >= tM-5 && lC <= lM+5 && lC >= lM-5) {
-        var couldID = $(this).attr('id');
-        var index = couldID.split('-')[1];
+        var cloudID = $(this).attr('id');      
         $(this).remove();
-        clouds = removeFromArray(clouds, index);
+        clouds = removeFromArray(clouds, cloudID);
         totalHit++;
         $("#score").html(totalHit);
       }
