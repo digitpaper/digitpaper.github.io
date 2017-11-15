@@ -42,12 +42,12 @@
       generateCloud(cloudIndex);
       clouds.push(cloudIndex);
       cloudIndex ++;
-      if (cloudIndex >= 1000) {
+      if (cloudIndex >= 50) {
         cloudIndex = 0;
       }
     }, 500);
 
-    $('body').bind("click touchstart", function(){
+    $('body').bind("touchstart", function(){
       lauchMissle();
     });
   });
