@@ -42,6 +42,9 @@
       generateCloud(cloudIndex);
       clouds.push(cloudIndex);
       cloudIndex ++;
+      if (cloudIndex >= 1000) {
+        cloudIndex = 0;
+      }
     }, 500);
 
     $('body').bind("click touchstart", function(){
