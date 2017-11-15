@@ -13,8 +13,8 @@
 
   $(window).ready(function(){
     
-    windowW = $(window).width;
-    windowH = $(window).height;
+    windowW = $(window).width();
+    windowH = $(window).height();
     $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
 
     window.ondevicemotion = function(event) {
@@ -74,7 +74,7 @@
     }
 
     // Y
-    if (beta > 70) {
+    if (beta > 60) {
       t += 1;
     } else if (beta < 0) {
       t -= 1;
