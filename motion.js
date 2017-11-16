@@ -24,6 +24,8 @@
   var totalHit = 0;
   var missileOnAir = false;
 
+  var noSleep = new NoSleep();
+
   $(window).ready(function(){
     $("#stopBtn").hide();
     
@@ -34,12 +36,14 @@
       startGame();
       $(this).hide();
       $("#stopBtn").show();
+      noSleep.enable();
     });
 
     $("#stopBtn").click(function(){
       stopGame();
       $(this).hide();
       $("#startBtn").show();
+      noSleep.disable();
     });
 
     window.ondeviceorientation = function(event) {
