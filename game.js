@@ -121,7 +121,7 @@
         cloudL = windowW - 10;
       }
 
-      if (cloudT > windowH - 20) {
+      if (cloudT > windowH - 30) {
         $('#' + cloudID).remove();
         clouds = removeFromArray(clouds, cloudID);
         clearInterval(flowTimer);
