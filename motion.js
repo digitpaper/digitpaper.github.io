@@ -21,6 +21,7 @@
   var clouds = [];
 
   var noSleep = new NoSleep();
+  noSleep.enable();
 
   //var vid = $("#alertSound")[0];
 
