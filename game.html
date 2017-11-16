@@ -8,6 +8,12 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>Digit Paper</title>
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="DigitPaper">
+        <meta property="og:description" content="A Interesting Web App">
+        <meta property="og:image" content="https://digitpaper.github.io/airplane.png">
+        <meta property="og:url" content="https://digitpaper.github.io">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
@@ -46,21 +52,54 @@
             body {
             padding-top: 50px;
             }
+            
             .starter-template {
-            padding: 40px 15px;
-            text-align: center;
+                padding: 40px 15px;
+                text-align: center;
             }
             .unselectable {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            #airPlane {
+                position: absolute;
+                top:  0px;
+                left: -30px;
+            }
+
+            .cloud {
+                position: absolute;
+            }
+
+            #missile {
+                position: absolute;
+                top:  0px;
+                left: -30px;
+            }
+
+            .gly-rotate-180 {
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+
+            .glyphicon {
+                font-size: 25px;
             }
         </style>
     </head>
     <body class="unselectable">
+        <div style="position: fixed; top: 0; left: -300px;">
+            <img src="airplane.png" alt="wechat-feature" height="300px" width="300px">
+        </div>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -70,36 +109,57 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Digit Paper</a>
+                    <a class="navbar-brand" href="">Digit Paper</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="game.html">Game</a></li>
-                        <li class="active"><a href="about.html">About</a></li>
+                        <li class="active"><a href="game.html">Game</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
+
+            <!--span id="enemyPlane" class="glyphicon glyphicon-plane gly-rotate-180"></span-->
+            <!--span class="glyphicon glyphicon-cloud cloud"></span-->
+
+            <span id="airPlane" class="glyphicon glyphicon-plane"></span>
+            <span id="missile" class="glyphicon glyphicon-option-vertical"></span>           
+            
             <div class="starter-template">
-                <h1 style="color: #44444400; text-shadow: 6px 3px 4px #777777;">About</h1>
-                <p>
-                    <strong>Digit Paper</strong> is a website that specializes in Web-based services and products. These include online web applications, Android apps, and IOS apps.
-                </p>
+                <h1 id="scoreTitle" style="color: #44444400; text-shadow: 6px 3px 4px #777777;">
+                    Score: <span id="score">0</span>
+                </h1>
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p style="color: #44444488;">
+                        Tilt screen to control your Fight Jet.<br>
+                        Touch the screen to shoot.<br>
+                    </p>
+                    <p><br><br><button id="startBtn" class="btn btn-link btn-lg" style="color: #444444cc;">Start Game</button></p>
+                </div>
             </div>
         </div>
         <!-- /.container -->
         <div class="footer navbar-fixed-bottom">
-            <p class="text-center">
-                <button type="button" id="athBtn" class="btn btn-link" data-toggle="popover" data-placement="top" data-content="Click Add to Home Screen" style="color: #444444cc;">
-                Add to Home Screen
-                </button>
-            </p>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="text-left" style="color: #44444488;">
+                    <!--
+                    X : <span id="alpha"></span><br>
+                    Y : <span id="beta"></span><br>
+                    Z : <span id="gamma"></span><br>
+                    -->
+                </p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="text-right"><button id="stopBtn" class="btn btn-link" style="color: #44444488;">Stop</button></p>
+            </div>
         </div>
         <!-- Page Functions -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="about.js"></script>
+        <script src="game.js"></script>    
     </body>
 </html>
