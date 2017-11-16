@@ -55,9 +55,10 @@
       var avgAcc = (ax+ay+az)/3; 
       $("#acceleration").html(Math.round(avgAcc));
 
-      if (avgAcc >= 5 || avgAcc <= -5) {
+      if (avgAcc >= 10 || avgAcc <= -10) {
         vid.play();
         $("#cautionTitle").show();
+        setTimeout(function(){ $("#cautionTitle").hide(); }, 3000);
       }
     }
 
