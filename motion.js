@@ -22,6 +22,8 @@
 
   var vid = $("#alertSound")[0];
 
+  $("#cautionTitle").hide();
+
   $(window).ready(function(){
     $("#stopBtn").hide();
     
@@ -53,8 +55,9 @@
       var avgAcc = (ax+ay+az)/3; 
       $("#acceleration").html(Math.round(avgAcc));
 
-      if (avgAcc >= 10) {
+      if (avgAcc >= 5 || avgAcc <= -5) {
         vid.play();
+        $("#cautionTitle").show();
       }
     }
 
