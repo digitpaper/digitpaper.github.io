@@ -53,7 +53,10 @@
     });
 
     $(document).keydown(function(e){
-      if (e.keyCode == 37) { 
+      
+      e.preventDefault();
+
+      if (e.keyCode == 37) {
         gamma = -20;
       }
       if (e.keyCode == 38) {
