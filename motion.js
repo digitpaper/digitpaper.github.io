@@ -46,17 +46,17 @@
       noSleep.disable();
     });
 
-    window.ondeviceorientation = function(event) {
-      alpha = Math.round(event.alpha);
-      beta = Math.round(event.beta);
-      gamma = Math.round(event.gamma);
+    window.ondevicemotion = function(event) {
+      ax = event.accelerationIncludingGravity.x
+      ay = event.accelerationIncludingGravity.y
+      az = event.accelerationIncludingGravity.z
+      //rotation = event.rotationRate;
+      
+      $("#x").html(Math.round(ax));
+      $("#y").html(Math.round(ay));
+      $("#z").html(Math.round(az));
+      $("#acceleration").html(Math.round((ax+ay+az)/3));
     }
-
-    $('body').bind("touchstart", function(){
-      if (!missileOnAir) {
-        lauchMissle();
-      }
-    });
 
     $(document).keydown(function(e){
 
