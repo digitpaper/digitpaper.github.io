@@ -1,5 +1,7 @@
 /*
+ * Digit Paper Top Gun
  * Copyright 2017 Chutian Gao
+ * Licensed under the Apache 2.0 license (https://digitpaper.github.io/LICENSE)
  */
 (function(){
 
