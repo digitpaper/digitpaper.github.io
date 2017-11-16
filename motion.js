@@ -10,21 +10,17 @@
   var gamma = 0;
   var speedX = 0;
   var speedY = 0;
-  var reach = 200;
 
   var windowW = 0;
   var windowH = 0;
 
-  var planeTimer;
   var cloudTimer;
-
   var cloudIndex = 0;
   var clouds = [];
 
-  var totalHit = 0;
-  var missileOnAir = false;
-
   var noSleep = new NoSleep();
+
+  var vid = $("#alertSound")[0];
 
   $(window).ready(function(){
     $("#stopBtn").hide();
@@ -33,14 +29,14 @@
     windowH = $(window).height();
   
     $("#startBtn").click(function(){
-      startGame();
+      //startGame();
       $(this).hide();
       $("#stopBtn").show();
       noSleep.enable();
     });
 
     $("#stopBtn").click(function(){
-      stopGame();
+      //stopGame();
       $(this).hide();
       $("#startBtn").show();
       noSleep.disable();
@@ -50,12 +46,16 @@
       ax = event.accelerationIncludingGravity.x
       ay = event.accelerationIncludingGravity.y
       az = event.accelerationIncludingGravity.z
-      //rotation = event.rotationRate;
       
       $("#x").html(Math.round(ax));
       $("#y").html(Math.round(ay));
       $("#z").html(Math.round(az));
-      $("#acceleration").html(Math.round((ax+ay+az)/3));
+      var avgAcc = (ax+ay+az)/3; 
+      $("#acceleration").html(Math.round(avgAcc));
+
+      if (avgAcc >= 10) {
+        vid.play();
+      }
     }
 
     $(document).keydown(function(e){
@@ -72,33 +72,19 @@
       if (e.keyCode == 40) { 
         beta = 90;
       }
-      if (e.keyCode == 32) { 
-        if (!missileOnAir) {
-          lauchMissle();
-        } 
-      }
     });
   });
 
 
   function startGame(){
     /*--------- Start Game -----------*/
-    $("#airPlane").show();
-    $("#airPlane").css({'position': 'absolute', 'top': (windowH/2) +'px', 'left': (windowW/2) +'px'});
-
-    planeTimer = setInterval(function(){
-      fly(beta, gamma); 
-    }, 10);
-
     cloudTimer = setInterval(function(){
       var cloudID = 'c-'+cloudIndex;
       generateCloud(cloudID);
       clouds.push(cloudID);
-      cloudIndex ++;
-      if (cloudIndex >= 300) {
-        clearInterval(cloudTimer);
-      }
-    }, 500);
+      cloudIndex ++;      
+      //clearInterval(cloudTimer);
+    }, 50);
     /*---------/ Start Game -----------*/
   }
 
@@ -110,20 +96,16 @@
 
   function generateCloud(cloudID){
 
-    var cloudHTML = '<span class="glyphicon glyphicon-cloud cloud" id="'+ cloudID +'" style="position:absolute;"></span>';
+    var cloudHTML = '<span class="glyphicon glyphicon-minus cloud" id="'+ cloudID +'" style="position:absolute;"></span>';
     $('body').prepend(cloudHTML);
     
-    var cloudT = 50;
-    var cloudL = Math.random() * windowW;
+    var cloudT = windowH / 2;
+    var cloudL = windowW;
     
     var flowTimer = setInterval(function(){
-      cloudT = cloudT + 1;
-      
-      if (cloudL > windowW - 10) {
-        cloudL = windowW - 10;
-      }
+      cloudL = cloudL - 1;
 
-      if (cloudT > windowH - 30) {
+      if (cloudL <= -5) {
         $('#' + cloudID).remove();
         clouds = removeFromArray(clouds, cloudID);
         clearInterval(flowTimer);
@@ -131,87 +113,6 @@
         $("#"+cloudID).css({'position': 'absolute', 'top': cloudT +'px', 'left': cloudL +'px'});
       }
     }, 10);
-  }
-
-  function fly(beta, gamma){
-    
-    var p = $("#airPlane").position();
-    var t = p.top;
-    var l = p.left;
-
-    // X
-    if (gamma > 15) {
-      l += 1;
-    } else if (gamma < -15) {
-      l -= 1;
-    }
-
-    if (l > windowW) {
-      l = 0;
-    } 
-
-    if (l < 0) {
-      l = windowW;
-    }
-
-    // Y
-    if (beta > 70) {
-      t += 1;
-    } else if (beta < 0) {
-      t -= 1;
-    }
-
-    if (t > windowH) {
-      t = 50;
-    } 
-
-    if (t < 0) {
-      t = windowH;
-    }
-
-    $("#airPlane").css({'position': 'absolute', 'top': t +'px', 'left': l +'px'});
-  }
-
-  function lauchMissle(){
-    var pPlane = $("#airPlane").position();
-    var tP = pPlane.top;
-    var lP = pPlane.left;
-    reach = 200;
-
-    $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
-
-    var shooting = setInterval(function(){
-      missileOnAir = true;
-      if (reach <= 0) {
-        tP = 0;
-        clearInterval(shooting);
-        missileOnAir = false;
-      }
-      tP = tP - 10;
-      reach = reach - 10;
-      isHit();
-      $("#missile").css({'position': 'absolute', 'top': tP +'px', 'left': lP +'px'});
-    }, 10);
-  }
-
-  function isHit(){
-    var pMissile = $("#missile").position();
-    var tM = pMissile.top;
-    var lM = pMissile.left;
-
-    $(".cloud").each(function(){
-      var pCloud = $(this).position();
-      var tC = pCloud.top;
-      var lC = pCloud.left;
-      if (tC <= tM+5 && tC >= tM-5 && lC <= lM+ 10 && lC >= lM-10) {
-        var cloudID = $(this).attr('id');      
-        $(this).remove();
-        clouds = removeFromArray(clouds, cloudID);
-        missileOnAir = false;
-        totalHit++;
-        $("#score").html(totalHit);
-      }
-    });
   }
 
   function removeFromArray(arr, niddle){

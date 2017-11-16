@@ -130,19 +130,21 @@
             <!--span id="enemyPlane" class="glyphicon glyphicon-plane gly-rotate-180"></span-->
             <!--span class="glyphicon glyphicon-cloud cloud"></span-->
 
-            <span id="airPlane" class="glyphicon glyphicon-plane"></span>
-            <span id="missile" class="glyphicon glyphicon-option-vertical"></span>
-
             <span style="font-size: 28px; color: #44444488;" style="position:absolute; top:500px;">
-                &#9866;
             </span>          
         
             <div class="starter-template">
-                <h1 id="scoreTitle" style="color: #44444400; text-shadow: 6px 3px 4px #777777;">
+                <h2 id="scoreTitle" style="color: #44444400; text-shadow: 2px 3px 4px #777777;">
                     Acceleration<br><br><span id="acceleration">0</span>
+                </h2>
+
+                <h1 id="scoreTitle" style="color: #44444400; text-shadow: 2px 3px 4px #333333;">
+                    <span class="glyphicon glyphicon-warning-sign" style="font-size: 48;"></span><br>Caution!
                 </h1>
-            
-                
+                <audio id="alertSound">
+                  <source src="alertSound.mp3" type="audio/mp3">
+                </audio>
+
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <p class="text-center"><br><br>
