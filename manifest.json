@@ -1,6 +1,5 @@
 {
- "version": "2.3",
- "short_name": "DigitPaper",
+ "short_name": "Digit Paper",
  "name": "Digit Paper",
  "start_url": "index.html",
  "theme_color":"#ffffff",
