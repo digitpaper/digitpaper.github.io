@@ -4,9 +4,9 @@
       $('#athBtn').popover('toggle');
     });
 
-	var action = '';
+	var action = getUrlParameter('action');
 
-
+	$("h1").html(action);
 
   });
 
