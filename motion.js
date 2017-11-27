@@ -55,7 +55,7 @@
       $("#x").html(Math.round(ax));
       $("#y").html(Math.round(ay));
       $("#z").html(Math.round(az));
-      var avgAcc = (ax+ay+az)/3; 
+      var avgAcc = Math.pow(Math.sqrt(ax)+Math.sqrt(ay)+Math.sqrt(az), 3); 
       $("#acceleration").html(Math.round(avgAcc));
 
       if (avgAcc >= 10 || avgAcc <= -10) {
