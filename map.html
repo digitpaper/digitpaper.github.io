@@ -1,0 +1,138 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" content="Top Gun | Digit Paper">
+        <meta name="author" content="Charlie Gao">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <meta x-weixin-history-title="Top Gun | Digit Paper" x-weixin-history-source="Digit Paper" x-weixin-history-imgurl="https://digitpaper.github.io/assets/airplane.png"/>
+
+        <title>Top Gun | Digit Paper</title>
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Top Gun | Digit Paper">
+        <meta property="og:description" content="A Interesting Web App">
+        <meta property="og:image" content="https://digitpaper.github.io/assets/airplane.png">
+        <meta property="og:url" content="https://digitpaper.github.io">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css-paper/bootstrap-theme.min.css">
+        
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <meta name="format-detection" content="telephone=no">
+        <style>
+            body {
+            padding-top: 64px;
+            }
+            
+            .starter-template {
+                padding: 40px 15px;
+                text-align: center;
+            }
+            .unselectable {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            #airPlane {
+                position: absolute;
+                top:  0px;
+                left: -30px;
+            }
+
+            .cloud {
+                position: absolute;
+            }
+
+            #missile {
+                position: absolute;
+                top:  0px;
+                left: -30px;
+            }
+
+            .gly-rotate-180 {
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+
+            .glyphicon {
+                font-size: 25px;
+            }
+
+            .container-fluid {
+                padding: 0px;
+            }
+        </style>
+    </head>
+    <body class="unselectable">
+        <div style="position: fixed; top: 0; left: -300px;">
+            <img src="assets/airplane.png" alt="wechat-feature" height="300px" width="300px">
+        </div>
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="">D-Map</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="motion.html">D-Motion</a></li>
+                        <li><a href="game.html">Game</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+<iframe
+  width="100%"
+  height="85%"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAbjV-xmWneDeZd2iFAU_EXEIauho0ZOmo
+    &q=Space+Needle,Seattle+WA" allowfullscreen>
+</iframe>
+            
+        </div>
+        <!-- /.container -->
+        <div class="footer navbar-fixed-bottom">
+        </div>
+        <!-- Page Functions -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
