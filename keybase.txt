@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/charliegao
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://digitpaper.github.io
+  * I am charliegao (https://keybase.io/charliegao) on keybase.
+  * I have a public key ASAyk0bXCMQIEYUyxD6FzoDWRmthLMFabDqsD3Gc9rXHigo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209279dc9b31ef961c273cb11a818e65f3aecd77d939f5c2c32dff0f0db18be5cf0a",
+      "host": "keybase.io",
+      "kid": "0120329346d708c408118532c43e85ce80d6466b612cc15a6c3aac0f719cf6b5c78a0a",
+      "uid": "0a1f17fb24ca5328029c12d448b85e19",
+      "username": "charliegao"
+    },
+    "merkle_root": {
+      "ctime": 1513029893,
+      "hash": "45fcb68b058ea1552e5bf36812f6947153ccfaac10207e8dcc804c9702f651ce67bafac6d95a3ce7047775224a2f8655a4f10c961efc1e6aef861bcb2c7d1f64",
+      "hash_meta": "bc22ed7090ee05d35d8a9abf6c01b96accb4a06a93c7c84507048ce37c455b52",
+      "seqno": 1804056
+    },
+    "service": {
+      "hostname": "digitpaper.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.37"
+  },
+  "ctime": 1513029909,
+  "expire_in": 504576000,
+  "prev": "85a1b67aeb0736c615d67355aaa75544fe5df80824884255f7f3a5fb35369714",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgMpNG1wjECBGFMsQ+hc6A1kZrYSzBWmw6rA9xnPa1x4oKp3BheWxvYWTFA097ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwOTI3OWRjOWIzMWVmOTYxYzI3M2NiMTFhODE4ZTY1ZjNhZWNkNzdkOTM5ZjVjMmMzMmRmZjBmMGRiMThiZTVjZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMzI5MzQ2ZDcwOGM0MDgxMTg1MzJjNDNlODVjZTgwZDY0NjZiNjEyY2MxNWE2YzNhYWMwZjcxOWNmNmI1Yzc4YTBhIiwidWlkIjoiMGExZjE3ZmIyNGNhNTMyODAyOWMxMmQ0NDhiODVlMTkiLCJ1c2VybmFtZSI6ImNoYXJsaWVnYW8ifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MTMwMjk4OTMsImhhc2giOiI0NWZjYjY4YjA1OGVhMTU1MmU1YmYzNjgxMmY2OTQ3MTUzY2NmYWFjMTAyMDdlOGRjYzgwNGM5NzAyZjY1MWNlNjdiYWZhYzZkOTVhM2NlNzA0Nzc3NTIyNGEyZjg2NTVhNGYxMGM5NjFlZmMxZTZhZWY4NjFiY2IyYzdkMWY2NCIsImhhc2hfbWV0YSI6ImJjMjJlZDcwOTBlZTA1ZDM1ZDhhOWFiZjZjMDFiOTZhY2NiNGEwNmE5M2M3Yzg0NTA3MDQ4Y2UzN2M0NTViNTIiLCJzZXFubyI6MTgwNDA1Nn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJkaWdpdHBhcGVyLmdpdGh1Yi5pbyIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjM3In0sImN0aW1lIjoxNTEzMDI5OTA5LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6Ijg1YTFiNjdhZWIwNzM2YzYxNWQ2NzM1NWFhYTc1NTQ0ZmU1ZGY4MDgyNDg4NDI1NWY3ZjNhNWZiMzUzNjk3MTQiLCJzZXFubyI6MjAsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RArzP4B5UTAaGzrc1wPwCASfgwFT+ZmqUb6p6s0K+p3y5bp7yriAbO/WN+a51dT/H93Uk88TYSSeeD2Y2L1clnAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBet9EPUQHt3wrWbUngmjEC8gPQTQ169NAGZS8+XYJxBo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/charliegao
+
+==================================================================
