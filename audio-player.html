@@ -84,56 +84,20 @@ body {
     </nav>
     <div class="container">
         <div class="starter-template">
-            <h3 style="color: #44444400; text-shadow: 6px 3px 4px #777777;">Podcast</h3>
-            <div class="list-group">
+            <h3 style="color: #44444400; text-shadow: 6px 3px 4px #777777;">Now Playing</h3>
 
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/07/14/2613013684735977478_hd.mp3" class="list-group-item" target="_blank">
-                    抠门
-                </a>
-
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/11/07/2634575305324606982_hd.mp3" class="list-group-item" target="_blank">
-                    本期节目不打折
-                </a> 
-
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/09/26/2626766305308738566_hd.mp3" class="list-group-item" target="_blank">
-                    糟心大妈
-                </a>
-
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/11/29/2638657699657166854_hd.mp3" class="list-group-item" target="_blank">
-                    留学在外
-                </a>
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/11/24/2637679091359409158_hd.mp3" class="list-group-item" target="_blank">
-                    梦
-                </a>
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/12/01/2638996686393752070_hd.mp3" class="list-group-item" target="_blank">
-                    今天你做梦了么？
-                </a>
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/12/04/2639566151819486726_hd.mp3" class="list-group-item" target="_blank">
-                    火力无边
-                </a>
-
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/12/13/2641252751116902918_hd.mp3" class="list-group-item" target="_blank">
-                    羡慕嫉妒没有恨
-                </a>
-
-                <a href="audio-player.html?src=http://cdn.lizhi.fm/audio/2017/12/15/2641622794754718726_hd.mp3" class="list-group-item" target="_blank">
-                    四合院不是这样的
-                </a>
-            </div>
-
-            <div class="list-group">
-
-                
-            </div>
+            <br><br>
+            <audio id="player" controls>
+                <source id="player-src" src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
         </div>
     </div>
     <!-- /.container -->
-    <div class="footer navbar-fixed-bottom">
-
-    </div>
     <!-- Page Functions -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="about.js"></script>
+    <script src="audio-player.js"></script>
 </body>
 </html>
