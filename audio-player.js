@@ -9,11 +9,13 @@
 
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
-    updateSrc(audioURL);
+    
     
     audiojs.events.ready(function() {
      var as = audiojs.createAll();
     });
+    
+    updateSrc(audioURL);
   });
 
 
