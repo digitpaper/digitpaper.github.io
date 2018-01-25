@@ -27,7 +27,13 @@ function updateSrcAndPlay(sourceUrl) {
       var r = confirm('Resume last track?');
       if (r) {
         playTime = savedTime;
-        audio[0].currentTime = savedTime;
+        
+        $(function(){
+            $('audio').bind('canplay', function(){
+                audio[0].currentTime = savedTime;
+            });
+        });
+        
         console.log('[Resume] ' + savedTime);
       }
     } else {
