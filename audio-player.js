@@ -6,7 +6,6 @@
 (function(){
 
   var audioURL = '';
-  var playTime = 0;
 
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
@@ -29,14 +28,12 @@ function updateSrcAndPlay(sourceUrl) {
     if (savedTime) {    
       var r = confirm('Resume last track?');
       if (r) {
-        playTime = savedTime;
         audio[0].currentTime = savedTime;
         console.log('[Resume] ' + savedTime);
       }
     } else {
       var saveTimeName = 'src' + sourceUrl;
       var savedTime = 0;
-      playTime = 0;
       setCookie(saveTimeName, savedTime, 7);
       console.log('[New Play] ' + savedTime);
     }
