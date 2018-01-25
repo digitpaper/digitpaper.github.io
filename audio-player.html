@@ -58,9 +58,10 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+.audiojs { margin: 15px 0px 20px; }
 </style>
 </head>
-<body class="unselectable">
+<body>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -84,21 +85,18 @@ body {
     </nav>
     <div class="container">
         <div class="starter-template">
-            <h3 style="color: #44444400; text-shadow: 6px 3px 4px #777777;">Now Playing</h3>
-
-            <br><br>
-            <audio id="player" controls>
-                <source id="player-src" src="" type="audio/mpeg" preload="auto">
-                Your browser does not support the audio element.
-            </audio>
-            
+            <h3 style="color: #44444400; text-shadow: 6px 3px 4px #777777;">Now Playing</h3>            
         </div>
+
+        <audio id="player" controls>
+            <source id="player-src" src="" type="audio/mpeg" preload="auto">
+        </audio>
+
     </div>
     <!-- /.container -->
     <!-- Page Functions -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!--<script src="audiojs/audiojs/audio.min.js"></script>-->
     <script src="audio-player.js"></script>
     
 </body>
