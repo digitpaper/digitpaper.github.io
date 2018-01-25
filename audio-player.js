@@ -23,17 +23,14 @@ function updateSrcAndPlay(sourceUrl) {
     audio[0].load();//suspends and restores all audio element
 
     var savedTime = getCookie("src" + sourceUrl);
+
+    audio[0].oncanplaythrough = audio[0].play();
+
     if (savedTime) {    
       var r = confirm('Resume last track?');
       if (r) {
         playTime = savedTime;
-        
-        $(function(){
-            $('audio').bind('canplay', function(){
-                audio[0].currentTime = savedTime;
-            });
-        });
-        
+        audio[0].currentTime = savedTime;
         console.log('[Resume] ' + savedTime);
       }
     } else {
@@ -43,8 +40,6 @@ function updateSrcAndPlay(sourceUrl) {
       setCookie(saveTimeName, savedTime, 7);
       console.log('[New Play] ' + savedTime);
     }
-
-    audio[0].oncanplaythrough = audio[0].play();
 
     updateTimer(sourceUrl, audio[0]);
 }
