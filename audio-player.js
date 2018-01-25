@@ -8,6 +8,8 @@
   var audioURL = '';
   var playTime = 0;
 
+  setCookie('Test', '1', 1);
+
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
     updateSrc(audioURL);
@@ -35,7 +37,9 @@ function updateSrc(sourceUrl) {
     }
 
     //audio[0].play(); changed based on Sprachprofi's comment below
-    audio[0].oncanplaythrough = audio[0].play();    
+    audio[0].oncanplaythrough = audio[0].play();
+
+    updateTimer(sourceUrl, audio[0]);
 }
 
 
@@ -47,10 +51,10 @@ function getUrlParameter(name) {
 };
 
 
-function setCookie(cname, cvalue, exdays) {
+function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
+    var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
@@ -58,7 +62,7 @@ function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -68,6 +72,14 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function updateTimer(src, player){
+  var saveTimeName = 'src' + src;  
+  setInterval(function(){
+    var currentTime = player.currentTime;
+    setCookie(saveTimeName,currentTime,7)
+  }, 3000); // Every 3 seconds
 }
 
 
