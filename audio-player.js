@@ -11,7 +11,7 @@
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
     updateSrcAndPlay(audioURL);
-
+/*
     $('#resumeBtn').click(function(){
       var audio = $("#player");
       var savedTime = getCookie("src" + audioURL);
@@ -22,6 +22,7 @@
         console.log('[Resume] ' + savedTime);
       } 
     });
+*/
   });
 
 
@@ -34,9 +35,13 @@ function updateSrcAndPlay(sourceUrl) {
     audio[0].load();//suspends and restores all audio element
 
     var savedTime = getCookie("src" + sourceUrl);
-    if (savedTime) {
-      playTime = savedTime;
-      console.log('[Resume] ' + savedTime);
+    if (savedTime) {    
+      var r = confirm('Resume last track?');
+      if (r) {
+        playTime = savedTime;
+        audio[0].currentTime = savedTime;
+        console.log('[Resume] ' + savedTime);
+      }
     } else {
       var saveTimeName = 'src' + sourceUrl;
       var savedTime = 0;
