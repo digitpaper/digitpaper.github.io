@@ -11,6 +11,17 @@
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
     updateSrcAndPlay(audioURL);
+
+    $('#resumeBtn').click(function(){
+      var audio = $("#player");
+      var savedTime = getCookie("src" + audioURL);
+      if (savedTime) {
+        audio[0].currentTime = savedTime;
+        playTime = savedTime;
+        audio[0].currentTime = savedTime;
+        console.log('[Resume] ' + savedTime);
+      } 
+    });
   });
 
 
@@ -24,7 +35,6 @@ function updateSrcAndPlay(sourceUrl) {
 
     var savedTime = getCookie("src" + sourceUrl);
     if (savedTime) {
-      audio[0].currentTime = savedTime;
       playTime = savedTime;
       console.log('[Resume] ' + savedTime);
     } else {
@@ -35,7 +45,6 @@ function updateSrcAndPlay(sourceUrl) {
       console.log('[New Play] ' + savedTime);
     }
 
-    //audio[0].play(); changed based on Sprachprofi's comment below
     audio[0].oncanplaythrough = audio[0].play();
 
     updateTimer(sourceUrl, audio[0]);
