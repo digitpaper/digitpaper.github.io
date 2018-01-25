@@ -8,15 +8,13 @@
   var audioURL = '';
   var playTime = 0;
 
-  setCookie('Test', '1', 1);
-
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
-    updateSrc(audioURL);
+    updateSrcAndPlay(audioURL);
   });
 
 
-function updateSrc(sourceUrl) {
+function updateSrcAndPlay(sourceUrl) {
     
     $("#player-src").attr("src", sourceUrl);
     
@@ -32,6 +30,7 @@ function updateSrc(sourceUrl) {
     } else {
       var saveTimeName = 'src' + sourceUrl;
       var savedTime = 0;
+      playTime = 0;
       setCookie(saveTimeName, savedTime, 7);
       console.log('[New Play] ' + savedTime);
     }
