@@ -11,18 +11,6 @@
   $(window).ready(function(){
     audioURL = getUrlParameter('src'); 
     updateSrcAndPlay(audioURL);
-/*
-    $('#resumeBtn').click(function(){
-      var audio = $("#player");
-      var savedTime = getCookie("src" + audioURL);
-      if (savedTime) {
-        audio[0].currentTime = savedTime;
-        playTime = savedTime;
-        audio[0].currentTime = savedTime;
-        console.log('[Resume] ' + savedTime);
-      } 
-    });
-*/
   });
 
 
