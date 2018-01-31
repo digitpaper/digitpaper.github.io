@@ -6,10 +6,25 @@
 (function(){
 
   var audioURL = '';
+  var isIos = false;
+
 
   $(window).ready(function(){
+
+    $("#playBtn").hide();
+
     audioURL = getUrlParameter('src'); 
     updateSrcAndPlay(audioURL);
+    isIos = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+    if (isIos) {
+      $("#playBtn").show();
+    }
+
+    $("#playBtn").click(function(){
+      $("#player")[0].play();
+    });
+
   });
 
 
