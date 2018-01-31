@@ -22,7 +22,14 @@
     }
 
     $("#playBtn").click(function(){
-      $("#player")[0].play();
+      var myPlayer = $("#player")[0];
+
+      if (myPlayer.paused){
+        updateSrcAndPlay(audioURL);
+      }
+      else {
+          myPlayer.pause();
+      }
     });
 
   });
@@ -30,11 +37,10 @@
 
 function updateSrcAndPlay(sourceUrl) {
     
-    $("#player-src").attr("src", sourceUrl);
-    
     var audio = $("#player");
-    audio[0].pause();
-    audio[0].load();//suspends and restores all audio element
+
+    audio[0].src = sourceUrl;
+    audio[0].load();
 
     var savedTime = localStorage.getItem("src-" + sourceUrl);
 
