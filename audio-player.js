@@ -17,9 +17,15 @@
     updateSrcAndPlay(audioURL);
     isIos = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
-    if (isIos) {
+   $("#player").on('canplay', function(){
+
+if (isIos) {
       $("#playBtn").show();
     }
+
+   });
+
+    
 
     $("#playBtn").click(function(){
       var myPlayer = $("#player")[0];
