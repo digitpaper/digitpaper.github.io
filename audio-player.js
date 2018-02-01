@@ -1,6 +1,6 @@
 /*
  * Digit Paper
- * Copyright 2017 Chutian Gao
+ * Copyright 2018 Chutian Gao
  * Licensed under the Apache 2.0 license (https://digitpaper.github.io/LICENSE)
  */
 (function(){
@@ -25,13 +25,12 @@
       var myPlayer = $("#player")[0];
 
       if (myPlayer.paused){
-        updateSrcAndPlay(audioURL);
+        myPlayer.play();
       }
       else {
-          myPlayer.pause();
+        myPlayer.pause();
       }
     });
-
   });
 
 
