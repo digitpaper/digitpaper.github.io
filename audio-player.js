@@ -18,11 +18,9 @@
     isIos = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
    $("#player").on('canplay', function(){
-
-if (isIos) {
+    if (isIos) {
       $("#playBtn").show();
     }
-
    });
 
     
@@ -49,9 +47,11 @@ function updateSrcAndPlay(sourceUrl) {
 
     var savedTime = localStorage.getItem("src-" + sourceUrl);
 
-    if (savedTime) {
-      audio[0].currentTime = savedTime;
-    }
+    audio.on('canplay', function(){
+      if (savedTime) {
+        audio[0].currentTime = savedTime;
+      }
+    });
 
     audio[0].oncanplaythrough = audio[0].play();
     updateTimer(sourceUrl, audio[0]);
