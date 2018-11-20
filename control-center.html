@@ -60,7 +60,7 @@ body {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control Center</a>
+                <a class="navbar-brand" href="">Control Center</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -74,10 +74,19 @@ body {
     <div class="container">
         <div class="starter-template">
             <h3 style="color: #44444444; text-shadow: 0px 0px 0px #999999;">Devices</h3>
+
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Device Name, Type, etc.">
+              <div class="input-group-btn">
+                <button class="btn btn-primary">Search</button>
+              </div>
+            </div>
+       <br>
+
             <div class="list-group">
 
             
-                <a href="" class="list-group-item">
+                <a class="list-group-item" href="cc-device-detail.html?d=Living Room Stand Lamp">
                     Living Room Stand Lamp
                 </a>
 
@@ -88,6 +97,14 @@ body {
                 <a href="" class="list-group-item">
                     Bose QuietComfort 35 II
                 </a>
+
+                <a href="cc-device-irobot.html" class="list-group-item">
+                    iRobot
+                </a>
+
+                <a href="" class="list-group-item">
+                    A/C
+                </a>
             
             </div>
 
@@ -95,7 +112,7 @@ body {
     </div>
     <!-- /.container -->
     <div class="footer navbar-fixed-bottom">
-
+        <p class="text-right"><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
     </div>
     <!-- Page Functions -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
