@@ -50,10 +50,6 @@
 
         detectSwipe();
 
-             $(window).on('unload', function() {
-   $(window).scrollTop(0);
-});
-
     });
 
     function detectSwipe() {
