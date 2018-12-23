@@ -50,6 +50,10 @@
 
         detectSwipe();
 
+             $(window).on('unload', function() {
+   $(window).scrollTop(0);
+});
+
     });
 
     function detectSwipe() {
@@ -62,6 +66,7 @@
         var allowedTime = 200;
 
         var directionCode = 0;
+   
         
         $("body").on("touchstart", function(e) {
             var touchobj = e.changedTouches[0]
@@ -69,6 +74,7 @@
             startX = touchobj.pageX
             startY = touchobj.pageY
             startTime = new Date().getTime()
+
         });
 
         $("body").on("touchend", function(e) {
@@ -104,6 +110,7 @@
                 l = 0;
                 t = 10;
             }
+      
         });
     }
 
