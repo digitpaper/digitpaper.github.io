@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
-<channel>晓说</channel>
+<channel>
 <title>1</title>
 <link>https://digitpaper.github.io</link>
 <description>晓说 第一季</description>
@@ -298,3 +298,7 @@
 </link>
     <description></description>
 </item>
+
+</channel>
+
+</rss>
