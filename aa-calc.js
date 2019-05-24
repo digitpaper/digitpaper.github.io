@@ -8,17 +8,27 @@
   $(window).ready(function(){
 
     $("#calcBtn").click(function(){
+      
+      
+      
+      $("#tips").html('');
+      $("#totalPay").html('');
+      $("#perPerson").html('');
+      
       var totalCharge = $("#totalCharge").val();
       var numPeople   = $("#numPeople").val();
       var tipRate     = $("#tipRate").val();
     
-      var tips = parseFloat(totalCharge) * parseInt(tipRate)/100;
-      var totalPay = parseFloat(totalCharge) * (1+ parseInt(tipRate)/100);
-      var perPerson = totalPay / parseInt(numPeople);
-      
-      $("#tips").val(tips);
-      $("#totalPay").val(totalPay);
-      $("#perPerson").val(perPerson);
+      if (totalCharge && numPeople && tipRate){
+        
+        var tips = parseFloat(totalCharge) * parseInt(tipRate)/100;
+        var totalPay = parseFloat(totalCharge) * (1+ parseInt(tipRate)/100);
+        var perPerson = totalPay / parseInt(numPeople);
+
+        $("#tips").html(tips);
+        $("#totalPay").html(totalPay);
+        $("#perPerson").html(perPerson);
+      }
       
     });
   });
