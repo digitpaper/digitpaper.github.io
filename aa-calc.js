@@ -7,15 +7,15 @@
 
   $(window).ready(function(){
 
-    $("#playBtn").click(function(){
-      var myPlayer = $("#player")[0];
-
-      if (myPlayer.paused){
-        myPlayer.play();
-      }
-      else {
-        myPlayer.pause();
-      }
+    $("#calcBtn").click(function(){
+      var totalCharge = $("#totalCharge").val();
+      var numPeople   = $("#numPeople").val();
+      var tipRate     = $("#tipRate").val()；
+    
+      var tips = totalCharge * (1+ parseInt(tipRate)/100);
+      
+      console.log(tips);
+    
     });
   });
 
