@@ -16,9 +16,9 @@
       var totalPay = parseFloat(totalCharge) * (1+ parseInt(tipRate)/100);
       var perPerson = totalPay / parseInt(numPeople);
       
-      console.log(tips);
-      console.log(totalPay);
-      console.log(perPerson);
+      $("#tips").val(tips);
+      $("#totalPay").val(totalPay);
+      $("#perPerson").val(perPerson);
       
     });
   });
