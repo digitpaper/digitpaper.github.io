@@ -10,12 +10,16 @@
     $("#calcBtn").click(function(){
       var totalCharge = $("#totalCharge").val();
       var numPeople   = $("#numPeople").val();
-      var tipRate     = $("#tipRate").val()；
+      var tipRate     = $("#tipRate").val();
     
-      var tips = totalCharge * (1+ parseInt(tipRate)/100);
+      var tips = parseFloat(totalCharge) * parseInt(tipRate)/100;
+      var totalPay = parseFloat(totalCharge) * (1+ parseInt(tipRate)/100);
+      var perPerson = totalPay / parseInt(numPeople);
       
       console.log(tips);
-    
+      console.log(totalPay);
+      console.log(perPerson);
+      
     });
   });
 
